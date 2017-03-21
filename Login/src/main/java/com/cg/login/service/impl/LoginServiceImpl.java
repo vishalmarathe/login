@@ -12,7 +12,15 @@ public class LoginServiceImpl implements LoginService{
 	
 	@Autowired
 	private CustomerDao customerDao;
-	
+
+	public CustomerDao getCustomerDao() {
+		return customerDao;
+	}
+
+	public void setCustomerDao(CustomerDao customerDao) {
+		this.customerDao = customerDao;
+	}
+
 	@Override
 	public Customer getCustomer(String customerId) {
 		return customerDao.findOne(customerId);
